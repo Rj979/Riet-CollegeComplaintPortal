@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Complaint Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; }
+        .sidebar {
+          position: fixed; top: 0; left: 0; height: 100%; width: 220px;
+          background: #0b3d91; color: white; padding: 20px;
+        }
+        .sidebar h2 { font-size: 18px; margin-bottom: 20px; }
+        .sidebar button {
+          width: 100%; background: none; border: none;
+          color: white; padding: 10px; text-align: left;
+          cursor: pointer; font-size: 16px;
+        }
+        .sidebar button:hover { background: #094080; }
+        .main { margin-left: 240px; padding: 20px; }
+        .topbar {
+          display: flex; justify-content: space-between; align-items: center;
+          border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 20px;
+        }
+        .top-left { display: flex; align-items: center; gap: 10px; }
+        .top-left img { width: 100px; height: auto; border-radius: 0; }
+        .topbar button {
+          background: #0b3d91; color: white; border: none;
+          padding: 8px 16px; border-radius: 6px; cursor: pointer;
+        }
+        .card { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        textarea { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; margin-top: 10px; }
+        button.submit { margin-top: 10px; padding: 10px 15px; background: #0b3d91; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <h2>Complaint Categories</h2>
+    <button onclick="setCategory('Library Facilities')">📚 Library Facilities</button>
+    <button onclick="setCategory('Transportation Facilities')">🚌 Transportation Facilities</button>
+    <button onclick="setCategory('Hostel Facilities')">🏠 Hostel Facilities</button>
+    <button onclick="setCategory('Other')">💡 Other</button>
+</div>
+
+<div class="main">
+    <div class="topbar">
+        <div class="top-left">
+            <img src="1000333097.jpg" alt="Logo" />
+            <h2>Welcome, Student!</h2>
+        </div>
+        <form action="LogoutServlet" method="post">
+            <button type="submit">Log Out</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>Submit a Complaint</h3>
+        <form action="ComplaintServlet" method="post">
+            <p>Category: <span id="selectedCategory">None</span></p>
+            <input type="hidden" name="category" id="categoryInput" value="None" />
+            <textarea name="complaint" placeholder="Type your complaint here..." required></textarea>
+            <button type="submit" class="submit">Submit Complaint</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function setCategory(category) {
+      document.getElementById("selectedCategory").textContent = category;
+      document.getElementById("categoryInput").value = category;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeakUp R-I-E-T</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background: linear-gradient(to right, #00c6ff, #0072ff);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+
+        .container {
+          background: white;
+          border-radius: 12px;
+          padding: 30px;
+          width: 350px;
+          text-align: center;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .container img {
+          width: 100px;
+          margin-bottom: 15px;
+        }
+
+        h2 {
+          margin: 10px 0;
+          color: #333;
+        }
+
+        p {
+          font-size: 14px;
+          color: #555;
+          margin-bottom: 20px;
+        }
+
+        input {
+          width: 100%;
+          padding: 10px;
+          margin: 8px 0;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+        }
+
+        button {
+          width: 100%;
+          padding: 10px;
+          margin-top: 10px;
+          border: none;
+          border-radius: 6px;
+          background: #0072ff;
+          color: white;
+          font-size: 16px;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background: #0056cc;
+        }
+
+        .switch-link {
+          margin-top: 15px;
+          font-size: 14px;
+        }
+
+        .switch-link a {
+          color: #0072ff;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .hidden {
+          display: none;
+        }
+
+        .error {
+          color: red;
+          font-size: 13px;
+          margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="1000333097.jpg" alt="Logo">
+    <h2>SpeakUp R-I-E-T</h2>
+    <p>Our vision is to provide a safe, transparent and effective way for every student to voice their concerns.</p>
+
+    <!-- ✅ Student Login Form -->
+    <form id="loginForm" action="login" method="post">
+        <input type="text" name="username" placeholder="Full Name" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="switch-link" id="loginSwitch">
+        Don’t have an account? <a onclick="showSignup()">Sign Up</a>
+    </div>
+
+    <!-- ✅ Student Sign Up Form -->
+    <form id="signupForm" class="hidden" action="register" method="post">
+        <input type="text" name="fullname" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="switch-link hidden" id="signupSwitch">
+        Already have an account? <a onclick="showLogin()">Login</a>
+    </div>
+
+    <div class="switch-link">
+        <a href="adminlogin.html" style="color: red; font-weight: bold;">Admin Login</a>
+    </div>
+</div>
+
+<script>
+    function showSignup() {
+      document.getElementById("loginForm").classList.add("hidden");
+      document.getElementById("loginSwitch").classList.add("hidden");
+      document.getElementById("signupForm").classList.remove("hidden");
+      document.getElementById("signupSwitch").classList.remove("hidden");
+    }
+
+    function showLogin() {
+      document.getElementById("signupForm").classList.add("hidden");
+      document.getElementById("signupSwitch").classList.add("hidden");
+      document.getElementById("loginForm").classList.remove("hidden");
+      document.getElementById("loginSwitch").classList.remove("hidden");
+    }
+</script>
+</body>
+</html>

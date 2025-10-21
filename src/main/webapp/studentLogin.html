@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #eef2f3; text-align: center; padding-top: 100px; }
+        form { background: white; display: inline-block; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+        input { display: block; margin: 10px auto; padding: 10px; width: 250px; }
+        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+<h2>Student Login</h2>
+<form action="StudentLoginServlet" method="post">
+    <input type="text" name="username" placeholder="Enter Username" required>
+    <input type="password" name="password" placeholder="Enter Password" required>
+    <button type="submit">Login</button>
+</form>
+<p><a href="register.html">New user? Register here</a></p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" ...>
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.portal</groupId>
+<artifactId>CollegeComplaintPortal</artifactId>
+<version>1.0-SNAPSHOT</version>
+<packaging>war</packaging>
+
+<properties>
+<maven.compiler.source>17</maven.compiler.source>
+<maven.compiler.target>17</maven.compiler.target>
+<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+
+<dependencies>
+<!-- Jakarta Servlet API (provided by Tomcat) -->
+<dependency>
+    <groupId>jakarta.servlet</groupId>
+    <artifactId>jakarta.servlet-api</artifactId>
+    <version>5.0.0</version>
+    <scope>provided</scope>
+</dependency>
+
+<!-- MySQL connector -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.33</version>
+</dependency>
+
+<!-- JSON helper (optional, used in ViewComplaints) -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.10.1</version>
+</dependency>
+</dependencies>
+
+<build>
+<finalName>CollegeComplaintPortal</finalName>
+</build>
+        </project>

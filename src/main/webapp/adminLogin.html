@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 { color: #333; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        th { background: #0078D7; color: white; }
+        button {
+            background: #0078D7;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        button:hover { background: #005bb5; }
+    </style>
+</head>
+<body>
+<h1>Admin Dashboard</h1>
+<p>Welcome, Admin! Here you can view and resolve student complaints.</p>
+<table>
+    <tr>
+        <th>Complaint ID</th>
+        <th>Student Name</th>
+        <th>Complaint</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>John Doe</td>
+        <td>WiFi not working in hostel</td>
+        <td>Pending</td>
+        <td><button>Mark as Resolved</button></td>
+    </tr>
+</table>
+</body>
+</html>
